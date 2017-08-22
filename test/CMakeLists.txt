@@ -6,6 +6,16 @@ project(sql-test)
 
 include_directories(sql-test "../")
 
+#gtest路径
+set(GTEST_LIB_PATH /opt/cdk/gtest/v1.8.0)
+
+include_directories(
+        ${GTEST_LIB_PATH}/include
+)
+link_directories(
+        ${GTEST_LIB_PATH}/lib
+)
+
 set(SQL_TEST_SRC
         #        test.cpp
         TestSelectModel.cpp

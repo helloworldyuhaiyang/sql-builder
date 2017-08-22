@@ -24,7 +24,7 @@ set(SOURCE_FILES
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
-target_link_libraries(${PROJECT_NAME} event)
+target_link_libraries(${PROJECT_NAME})
 
 #设置头文件的安装路径
 install(FILES ${HEAD_FILES} DESTINATION include/sql-builder)
