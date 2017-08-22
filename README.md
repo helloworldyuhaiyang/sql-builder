@@ -1,18 +1,18 @@
-#帮助简单的写 sql 语句。
+# 帮助简单的写 sql 语句。
         #demo 在 test 目录下。单元测试依赖 gtest
 
-#安装
-mkdir build
-cd build
-cmake ..
-make
-make install
+# 安装
+1.mkdir build
+2.cd build
+3.cmake ..
+4.make
+5.make install
 
 
 
-#使用
+# 使用
 
-##增
+## 增
 ```
  InsertModel i;
     i.insert("score", 100)
@@ -24,7 +24,7 @@ make install
  std::cout << i.str() << std::endl;
 ```
 
-##删
+## 删
 ```
   DeleteModel d;
     d._delete()
@@ -33,7 +33,7 @@ make install
   std::cout << d << std::endl;
 ```
 
-##改
+## 改
 ```
  updateModel.update("user")
             .set("name", "yu")
@@ -44,7 +44,7 @@ make install
  std::cout << updateModel << std::endl;
 ```
 
-##查
+## 查
 ```
  sql.select("id", "age", "name", "address")
             .from("user")
