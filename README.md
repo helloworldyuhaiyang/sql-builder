@@ -1,13 +1,15 @@
 # 帮助简单的写 sql 语句。
         #demo 在 test 目录下。单元测试依赖 gtest
 
-# 安装
+# 安装[Linux/Mac]
 1.mkdir build
 2.cd build
 3.cmake ..
 4.make
 5.make install
-
+#安装 [windows/Visual Studio]
+1、CMake GUI配置VS 工程文件
+2、VS打开右键生成 Debug、Release不同版本的静态库
 
 
 # 使用

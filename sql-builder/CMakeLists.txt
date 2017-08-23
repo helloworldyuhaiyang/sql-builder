@@ -25,13 +25,12 @@ set(SOURCE_FILES
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
 target_link_libraries(${PROJECT_NAME})
-
 #设置头文件的安装路径
 install(FILES ${HEAD_FILES} DESTINATION include/sql-builder)
-
-#默认Linux,windows编译打开windows对应注释
-#设置库文件的安装路径 Linux/Mac
-install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
-#新增Visual Studio 编译,Windows
-install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib  ARCHIVE DESTINATION lib)
-#install(FILES TaijiRedis DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+if (CMAKE_SYSTEM_NAME MATCHES "Linux")
+	install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
+else (CMAKE_SYSTEM_NAME MATCHES "Windows")
+	install(TARGETS ${PROJECT_NAME}
+	LIBRARY DESTINATION lib 
+	ARCHIVE DESTINATION lib)
+endif()
