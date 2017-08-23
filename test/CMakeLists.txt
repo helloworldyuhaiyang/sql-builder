@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 2.8)
-
-set(CMAKE_MACOSX_RPATH 0)
-
 project(sql-test)
 
 include_directories(sql-test "../")
