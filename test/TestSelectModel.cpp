@@ -17,7 +17,7 @@ void TestSelectModel::TearDownTestCase() {
 TEST_F(TestSelectModel, select) {
     sql.select("id", "age", "name", "address")
             .from("user")
-            .where(Column("score") > 60 and (Column("age") >= 20 or Column("address").is_not_null()))
+            .where(Column("score") > 60 && (Column("age") >= 20 || Column("address").is_not_null()))
             .group_by("age")
             .having(Column("age") > 10)
             .order_by("age desc")

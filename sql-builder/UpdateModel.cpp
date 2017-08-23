@@ -12,15 +12,6 @@ namespace sql {
         return *this;
     }
 
-
-    template<>
-    UpdateModel &UpdateModel::set(const std::string &c, const std::nullptr_t &) {
-        std::string str(c);
-        str.append(" = null");
-        _set_columns.push_back(str);
-        return *this;
-    }
-
     UpdateModel &UpdateModel::where(const std::string &condition) {
         _where_condition.push_back(condition);
         return *this;

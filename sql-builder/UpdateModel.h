@@ -30,6 +30,21 @@ namespace sql {
             return *this;
         }
 
+		//************************************
+		// Method:    set
+		// FullName:  sql::UpdateModel::set
+		// Access:    public 
+		// Returns:   sql::UpdateModel &
+		// Qualifier: no have value 
+		// Parameter: const std::string & c
+		// Parameter: const std::nullptr_t &
+		//************************************
+		UpdateModel &set(const std::string &c, const std::nullptr_t &) {
+			std::string str(c);
+			str.append(" = null");
+			_set_columns.push_back(str);
+			return *this;
+		}
         template<typename T>
         UpdateModel &operator()(const std::string &c, const T &data) {
             return set(c, data);
