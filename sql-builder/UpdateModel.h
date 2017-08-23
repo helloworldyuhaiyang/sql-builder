@@ -30,6 +30,9 @@ namespace sql {
             return *this;
         }
 
+		template<>
+		UpdateModel &set<const std::nullptr_t&>(const std::string &c, const std::nullptr_t &);
+
         template<typename T>
         UpdateModel &operator()(const std::string &c, const T &data) {
             return set(c, data);
