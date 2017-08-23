@@ -21,7 +21,13 @@ namespace sql {
         _where_condition.push_back(condition.str());
         return *this;
     }
-
+	template<>
+	UpdateModel &UpdateModel::set<const std::nullptr_t&>(const std::string &c, const std::nullptr_t &) {
+		std::string str(c);
+		str.append(" = null");
+		_set_columns.push_back(str);
+		return *this;
+	}
     const std::string &UpdateModel::str() {
         _sql.clear();
         _sql.append("update ");
